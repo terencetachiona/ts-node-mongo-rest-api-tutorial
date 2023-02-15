@@ -33,6 +33,14 @@ git clone https://github.com/AntonioErdeljac/ts-node-mongo-rest-api-tutorial.git
 npm i
 ```
 
+### Setup MongoDB URL
+
+In `src/index.ts`:
+
+```js
+const MONGO_URL = ''; // DB URI
+```
+
 ### Start the app
 
 ```shell
