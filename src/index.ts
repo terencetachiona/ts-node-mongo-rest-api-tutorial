@@ -24,10 +24,11 @@ server.listen(8080, () => {
   console.log('Server running on http://localhost:8080/');
 });
 
-const MONGO_URL = 'mongodb+srv://tachiona:<tachiona1234>@cluster0.2cpkp7d.mongodb.net/chishona?retryWrites=true&w=majority'; // DB URI
+const MONGO_URL = 'mongodb+srv://tachiona:tachiona1234@cluster0.2cpkp7d.mongodb.net/chishona?retryWrites=true&w=majority'; // DB URI
 
+mongoose.set('strictQuery', false);
 mongoose.Promise = Promise;
 mongoose.connect(MONGO_URL);
 mongoose.connection.on('error', (error: Error) => console.log(error));
-mongoose.set('strictQuery', false);
+
 app.use('/', router());
